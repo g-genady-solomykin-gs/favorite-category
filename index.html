@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Любимая категория</title>
+    <link rel="stylesheet" href="/libs/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+    <a href="#" id="open-favorite-category-popup" style="font-size: 24px;">Открыть</a>
+
+    <div id="favorite-category__init">
+        <div class="favorite-category">
+            <div class="favorite-category-wrapper wrapper">
+                <input type="checkbox" id="checkbox-open" class="favorite-category-wrapper__checkbox">
+                <label for="checkbox-open" class="favorite-category-wrapper__open"></label>
+    
+                <div class="favorite-category-wrapper__content content">
+                    <label for="checkbox-open" class="favorite-category-wrapper__close close">
+                        <i class="favorite-category-wrapper__icon"></i>
+                    </label>
+                    <div class="favorite-category-wrapper__control">
+                        <h6 class="favorite-category-wrapper__control-title">
+                            Выберите <br /> 3 любимые категории
+                            <span class="favorite-category-wrapper__control-description">
+                                И получите скидку или бонусы на покупки
+                            </span>
+                        </h6>
+                        <ul class="favorite-category-wrapper__control-list">
+                        <li class="favorite-category-wrapper__control-checkboxes">
+                                <!-- {render checkbox } -->
+                        </li>
+                        <li class="favorite-category-wrapper__control-button">
+                                <!-- {render button } -->
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <script src="/js/script.js"></script>
+
+</body>
+</html>

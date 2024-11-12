@@ -1,0 +1,84 @@
+{
+	"lps": [
+		{
+			"Id": 12322,
+			"Description": "40% на книги определенным чбк",
+			"DescriptionFull": "40% на книги определенным чбк",
+			"Effect": "Discount",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12323,
+			"Description": "40% на книги определенным чбк",
+			"DescriptionFull": "40% на книги определенным чбк",
+			"Effect": "Discount",
+			"Value": 0.400,
+			"IsSelected": true
+		},
+		{
+			"Id": 12324,
+			"Description": "40% бонус",
+			"DescriptionFull": "40% бонус",
+			"Effect": "BonusRatio",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12325,
+			"Description": "40% бонус",
+			"DescriptionFull": "40% бонус",
+			"Effect": "BonusRatio",
+			"Value": 0.400,
+			"IsSelected": true
+		},
+		{
+			"Id": 12326,
+			"Description": "40% на книги определенным чбк",
+			"DescriptionFull": "40% на книги определенным чбк",
+			"Effect": "Discount",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12327,
+			"Description": "40% на книги определенным чбк",
+			"DescriptionFull": "40% на книги определенным чбк",
+			"Effect": "Discount",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12328,
+			"Description": "40% на книги определенным чбк",
+			"DescriptionFull": "40% на книги определенным чбк",
+			"Effect": "Discount",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12329,
+			"Description": "40% бонус",
+			"DescriptionFull": "40% бонус",
+			"Effect": "BonusRatio",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12330,
+			"Description": "40% бонус",
+			"DescriptionFull": "40% бонус",
+			"Effect": "BonusRatio",
+			"Value": 0.400,
+			"IsSelected": false
+		},
+		{
+			"Id": 12331,
+			"Description": "40% бонус",
+			"DescriptionFull": "40% бонус",
+			"Effect": "BonusRatio",
+			"Value": 0.400,
+			"IsSelected": false
+		}
+	]
+}

@@ -1,0 +1,226 @@
+html, *
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+.favorite-category
+    &.visible
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100vw
+        min-height: 100vh
+        background: #FF6277
+        // background: #29292980
+        z-index: 999
+    &-wrapper
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        &__open::after,
+        &__content
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            overflow: hidden
+        &__checkbox[type="checkbox"]
+            display: none
+        &__checkbox[type="checkbox"]:checked ~ label:after
+            opacity: 0
+            transform: translate(-50%, -50%) scale3d(1, 1, 1)
+            transition: all .5s cubic-bezier(0.64, 0.57, 0.67, 1.53)
+        &__checkbox[type="checkbox"]:checked ~ .content
+            transform: translate(-50%, -50%) scale3d(1, 1, 1)
+            transition: transform .5s .4s cubic-bezier(0.99, 0.04, 0.57, 1.31), box-shadow .5s .7s
+            box-shadow: 0 0 2px rgba(0, 0, 0, .3), 0 20px 10px -15px rgba(0, 0, 0, .3)
+        &__checkbox[type="checkbox"]:checked ~ .content .close
+            transform: scale3d(1,1,1)
+            transition: transform .5s .7s cubic-bezier(0.99, 0.04, 0.57, 1.31), opacity .5s .7s, background .3s, box-shadow .3s
+            opacity: 1
+        &__checkbox[type="checkbox"]:checked ~ .content h6
+            transform: translate(0, 0)
+            transition: transform .5s .6s cubic-bezier(0.99, 0.04, 0.57, 1.31), opacity .8s .8s
+            opacity: 1
+        &__checkbox[type="checkbox"]:checked ~ .content .favorite-category-wrapper__control-checkboxes
+            transform: translate(0, 0)
+            transition: transform .5s .62s cubic-bezier(0.99, 0.04, 0.57, 1.31), opacity .8s .8s
+            opacity: 1
+        &__checkbox[type="checkbox"]:checked ~ .content .favorite-category-wrapper__control-button
+            transform: translate(0, 0)
+            transition: transform .3s .62s cubic-bezier(0.99, 0.04, 0.57, 1.31), opacity .8s .8s
+            opacity: 1
+        &__open
+            display: block
+            cursor: pointer
+            &::after
+                content: ''
+                background-color: rgba(245, 245, 245, .3)
+                border-radius: 50%
+                opacity: 1
+                transform: translate(-50%, -50%) scale3d(0, 0, 0)
+                transition: none
+        &__content
+            width: auto
+            max-width: 420px
+            min-width: 375px
+            background: rgba(255, 255, 255, 1)
+            border-radius: 20px
+            transform: translate(-50%, -50%) scale3d(0, 0, 0)
+            padding: 20px 15px 20px 20px
+            color: #262626
+            transition: transform .5s .5s cubic-bezier(0.99, 0.04, 0.57, 1.31), box-shadow .5s .5s
+        &__content h6,
+        &__content .favorite-category-wrapper__control-checkboxes
+            transition: .5s
+            transform: translate(0, 60px)
+            opacity: 0
+            h6
+                transition: transform .5s .02s cubic-bezier(0.99, 0.04, 0.57, 1.31), opacity .5s
+        &__content .favorite-category-wrapper__control-button
+            transition: .3s
+            opacity: 0
+        &__close
+            position: absolute
+            top: 20px
+            right: 20px
+            border-radius: 50%
+            color: #fff
+            cursor: pointer
+            font-weight: bolder
+            opacity: 0
+            z-index: 25
+            transform: scale3d(0,0,0)
+            transition: transform .5s cubic-bezier(0.99, 0.04, 0.57, 1.31), opacity .5s, box-shadow .3s
+            &.active
+                box-shadow: 0 0px 10px -5px rgba(255, 98, 119, 1)
+            &:hover
+                animation: bounce .5s
+        &__icon
+            display: inline-block
+            background: url('../images/close.svg') no-repeat center/contain
+            width: 30px
+            height: 30px
+            pointer-events: none
+        &__control
+            &-title
+                margin: 0
+                font-size: 24px
+                font-weight: 500
+                line-height: 32px
+                margin-bottom: 30px
+            &-description
+                display: block
+                margin-top: 8px
+                line-height: 24px
+                font-size: 16px
+                font-weight: 400
+            &-list
+                list-style: none
+                font-size: 16px
+                font-weight: 400
+                user-select: none
+            &-checkboxes
+                max-height: 360px
+                height: 100%
+                overflow-y: auto
+                &::-webkit-scrollbar-thumb
+                    border-radius: 20px
+                    background-color: #D8D8DC
+                    border: 3px solid #D8D8DC
+                &::-webkit-scrollbar-track 
+                    background: #F5F5FA
+                &::-webkit-scrollbar
+                    width: 4px
+            &-checkbox
+                display: flex
+                justify-content: space-between
+                align-items: center
+                margin-bottom: 10px
+                margin-right: 8px
+                border-radius: 12px
+                padding: 12px 15px
+                border: 1px solid #EBEBF0
+                &:last-child
+                    margin-bottom: 0
+                input[type="checkbox"]
+                    display: none
+                    & + .favorite-category-wrapper__control-checkbox-icon
+                        display: inline-flex
+                        justify-content: center
+                        align-items: center
+                        width: 24px
+                        height: 24px
+                        border: 1px solid #EBEBF0
+                        border-radius: 6px
+                        background: rgb(235 235 240 / 31%)
+                        transition: ease 0.3s
+                        i     
+                            transition: opacity ease 0.3s
+                            opacity: 0
+                            color: white
+                    &:checked + .favorite-category-wrapper__control-checkbox-icon
+                        background-color: #30DB5B
+                        border-color:#30DB5B
+                        &::after
+                            content: attr(data-checked)
+                            background-image: url('../images/checked.svg')
+                            width: 13px
+                            height: 11px
+                            background-repeat: no-repeat
+                            background-position: center
+                        i
+                            opacity: 1
+            &-checkbox-icon
+                margin-left: 15px
+            &-name
+                width: 185px
+            &-percent
+                position: relative
+                margin-left: auto
+                padding-right: 27px
+                &::after
+                    content: url('../images/icon-exclamatory.svg')
+                    position: absolute
+                    right: 0
+            &-button
+                margin-top: 30px
+                button, div
+                    outline: none
+                    border: none
+                    width: 100%
+                    color: #AEAEB2
+                    text-align: center
+                    font-size: 16px
+                    font-weight: 400
+                    background-color: #EBEBF0
+                    border-radius: 12px
+                    padding: 20px
+                    pointer-events: none
+                    transition: .3s
+                    cursor: pointer
+                    &.active
+                        pointer-events: unset
+                        color: #fff
+                        background-color: #2F80ED
+                        &:hover
+                            background-color: #2371d8
+                
+
+
+@keyframes bounce
+    0%
+        transform: translate(0px, 0px) 
+
+    40%
+        transform: translate(0px, -12px)
+
+    80%
+        transform: translate(0px, 2px) 
+
+    100%
+        transform: translate(0px, 0px) 
+
